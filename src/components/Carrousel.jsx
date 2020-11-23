@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components"; //DELETAR
 import background from "../images/BG1.png";
+import useSlider from "../hooks/useSlider"
+import Images from "../images/carousel"
 
 const Img = styled.div`
   /* display: flex;
@@ -10,7 +12,7 @@ const Img = styled.div`
     width: calc(var(--4)*100%); */
   width: 1920px;
   height: 828px;
-  background: transparent url("${background}") 0% 0% no-repeat padding-box;
+  background: transparent url("${Images}") 0% 0% no-repeat padding-box;
   align-items: center;
   overflow-y: hidden;
   opacity: 0.43;
@@ -61,15 +63,37 @@ const Text = styled.div `
   }
 `;
 
-const Caroussel = () => {
+const Caroussel = ({images}) => {
+  const slideImage = useRef(null)
+  const slideText = useRef(null)
+  const { goToPreviousSlide, goToNextSlide } = useSlider(
+    slideImage,
+    slideText,
+    images
+  )
   return (
-    <Img>
-      <Text>
-        <p>BUILD ANYTHING WITH US</p>
-        <h1>We're always ready for a challenge</h1>
-        <button>Discover More</button>
-      </Text>
-    </Img>
+    <div className="slider" ref={slideImage}>
+    <div className="slider--content">
+      <button onClick={goToPreviousSlide} className="slider__btn-left">
+        <i className="fas fa-angle-left"></i>
+      </button>
+      <div className="slider--feature">
+        <h1 className="feature--title">Dreaming</h1>
+        <p ref={slideText} className="feature--text"></p>
+        <button className="feature__btn">Get started</button>
+      </div>
+      <button onClick={goToNextSlide} className="slider__btn-right">
+        <i className="fas fa-angle-right"></i>
+      </button>
+    </div>
+  </div>
+    // <Img images={Images}>
+    //   <Text>
+    //     <p>BUILD ANYTHING WITH US</p>
+    //     <h1>We're always ready for a challenge</h1>
+    //     <button>Discover More</button>
+    //   </Text>
+    // </Img>
   );
 };
 

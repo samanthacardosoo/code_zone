@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../images/Base3.svg";
+import background from "../images/Base3.png";
 import play from "../images/IconPlay.svg";
 import styled from "styled-components"; //DELETAR
 import Contact from "./Contact";
