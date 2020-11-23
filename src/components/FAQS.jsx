@@ -1,10 +1,11 @@
 import React from "react";
 import Icon from "../images/Icon.svg";
 import styled from "styled-components"; //DELETAR
+import TextAccordion from "./Accordion";
+
 
 const Title = styled.div`
   width: 512px;
-  height: 687px;
   font-family: "Roboto Condensed", sans-serif;
   text-align: left;
 
@@ -37,11 +38,7 @@ const FAQS = () => {
         <p>OUR FAQS</p>
         <h3>Frequently Asked Questions</h3>
       </Title>
-      {/* How to process the funtion for construction?
-                Where should I incorporate my business?
-                    There are many variations of passages of available but the majority have suffered alteration in that some form by injected randomised words which don’t look even as slightly believable now.
-                How there are many variations of passages 
-                What about our safety measures ? */}
+      <TextAccordion/>
     </div>
   );
 };
