@@ -10,52 +10,40 @@ const ContainerHeader = styled.header`
   a {
     font-size: 16px;
     color: #666d81;
-    max-width: 821px;
-    height: 21px;
-    padding: 20px;
+    padding: 2%;
   }
 
   img {
-    margin-top: 20px;
+    margin-top: 2%;
   }
 
 @media (max-width:768px) {
     display: grid;
-    height: 435px;
+    height: 360px;
 
     a {
-    font-size: 30px;
+    font-size: 20px;
     color: #666d81;
-    max-width: 821px;
     max-height: 21px;
-    padding: 20px;
   }
 
   img {
     margin-top: 0;
+    width: 30%;
   }
  
 }
 
-/* @media (max-width:1024px) {
-
-} */
-
 @media (max-width:480px) {
-    display: grid;
-    height: 570px;
+    height: 265px;
 
     a {
-    font-size: 40px;
-    color: #666d81;
-    max-width: 50%;
-    max-height: 21px;
-    padding: 20px;
+    font-size: 15px;
   }
 
   img {
     margin-top: 0;
-    width: 50%;
+    width: 25%;
   }
  
 }
@@ -65,15 +53,15 @@ const ContainerHeader = styled.header`
 const Header = () => {
   return (
     <ContainerHeader>
-      <a href="#">Home</a>
-      <a href="#">Pages</a>
-      <a href="#">Our Services</a>
-      <a href="#">
+      <a href="/">Home</a>
+      <a href="/">Pages</a>
+      <a href="/">Our Services</a>
+      <a href="/">
         <img src={logo} />
       </a>
-      <a href="#">Recent Projects</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+      <a href="/">Recent Projects</a>
+      <a href="/">Blog</a>
+      <a href="/">Contact</a>
     </ContainerHeader>
   );
 };

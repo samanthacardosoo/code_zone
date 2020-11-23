@@ -25,67 +25,62 @@ const Image = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width:1024px) {
-
-}
-
-@media (max-width:768px) {
+  @media (max-width: 768px) {
     h3 {
-        font-size: 40px;
-        max-width: 61%;
-        margin-left: 20%;
+      font-size: 40px;
+      max-width: 61%;
+      margin-left: 20%;
     }
 
     img {
-        width: 50px;
+      width: 50px;
     }
-   
-}
+  }
 
-@media (max-width:480px) {
-    
-}
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 30px;
+      max-width: 73%;
+      margin-left: 15%;
+    }
+
+    img {
+      width: 35px;
+    }
+  }
 `;
 
-const Container = styled.div `
-    display: grid;
-    grid-template-columns: 50% 50%;
-`
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  @media (max-width: 480px) {
+    grid-template-columns: revert;
+  }
+`;
 
 const Map = styled.iframe`
   width: 100%;
   height: 558px;
   border: 0;
   margin-bottom: -1%;
-
-  @media (max-width:1024px) {
-    width: 1024px;
-}
-
-@media (max-width:768px) {
-    width: 768px;
-}
-
-@media (max-width:480px) {
-    width: 480px;
-}
 `;
 
 const Subscribe = styled.div`
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   background: #ff4f01;
 
   p {
-      font-size: 30px;
-      font-weight: bold;
-      color: #FFFFFF;
-      margin: 6% 10%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 6% 10%;
   }
 
   input {
     font-size: 16px;
-    color: #666D81;
+    color: #666d81;
     width: 30%;
     max-height: 78px;
     border-radius: 5px;
@@ -96,41 +91,74 @@ flex-wrap: wrap;
 
   button {
     width: 15%;
-   max-height: 78px;
-    background: #131D3B;
+    max-height: 78px;
+    background: #131d3b;
     border-radius: 5px;
     border: none;
     font-size: 18px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-top: 5%;
     margin-left: 1%;
   }
 
-  @media (max-width:1024px) {
-    
-}
-
-@media (max-width:768px) {
-
+  @media (max-width: 1024px) {
     p {
-        font-size: 20px;
-        margin: 6% 8%;
+      font-size: 20px;
+      margin: 6% 8%;
     }
 
     input {
-        max-height: 50px;
-        font-size: 14px;
+      max-height: 50px;
+      font-size: 14px;
     }
 
     button {
-        width: 17%;
-        height: 50px;
+      width: 17%;
+      height: 50px;
     }
-}
+  }
 
-@media (max-width:480px) {
-    
-}
+  @media (max-width: 768px) {
+    p {
+      font-size: 20px;
+      margin: 6% 8%;
+    }
+
+    input {
+      max-height: 50px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 17%;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+
+    p {
+      font-size: 20px;
+      margin: 6% 0;
+    }
+
+    input {
+      max-height: 50px;
+      width: 100%;
+      font-size: 12px;
+    }
+
+    button {
+      width: 50%;
+      height: 40px;
+      margin-bottom: 3%;
+      font-size: 14px;
+      margin-left: 25%;
+    }
+  }
 `;
 
 const Section = () => {

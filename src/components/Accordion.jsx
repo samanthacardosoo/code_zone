@@ -1,22 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 
-// body {
-//   font-family: "Roboto Condensed", sans-serif;
-//   line-height: 1.4;
-//   padding: 30px;
-// }
-
-// .wrapper {
-//   width: 600px;
-//   margin: 0 auto;
-// }
-
 const AccordionContainer = styled.div `
   & + * {
     margin-top: 0.5em;
   }
-
 
 .accordion-item {
   overflow: hidden;
@@ -70,6 +58,18 @@ const AccordionContainer = styled.div `
 .accordion-content {
   padding: 1em 1.5em;
 }
+  
+  @media (max-width:768px) {
+   .accordion-title {
+      font-size: 16px;
+   }
+  }
+  
+  @media (max-width:480px) {
+    .accordion-title {
+      font-size: 14px;
+   }
+  }
 `
 
 const Container = styled.div `
@@ -79,19 +79,14 @@ const Container = styled.div `
     line-height: 1.4;
     margin-left: 20%;
     margin-top: 5%;
-
-    @media (max-width:1024px) {
-    
-  }
   
   @media (max-width:768px) {
-   .accordion-title {
-      font-size: 16px;
-   }
+      font-size: 14px;
   }
   
   @media (max-width:480px) {
-      
+      font-size: 12px;
+      margin-bottom: 5%; 
   }
 `
 
@@ -99,7 +94,6 @@ const Accordion = ({ title, children }) => {
     const [isOpen, setOpen] = React.useState(false);
     return (
       <AccordionContainer>
-        
         <div
           className={`accordion-title ${isOpen ? "open" : ""}`}
           onClick={() => setOpen(!isOpen)}

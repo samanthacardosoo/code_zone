@@ -3,7 +3,6 @@ import Icon from "../images/Icon.svg";
 import styled from "styled-components";
 import TextAccordion from "./Accordion";
 
-
 const Title = styled.div`
   text-align: left;
 
@@ -12,7 +11,7 @@ const Title = styled.div`
     margin-left: 20%;
   }
 
-  p {
+  h2 {
     letter-spacing: 3.2px;
     color: #666d81;
     font-size: 16px;
@@ -20,32 +19,32 @@ const Title = styled.div`
     margin-top: 3%;
   }
 
-  h3 {
+  h1 {
     font-size: 50px;
     color: #131d3b;
     margin-left: 20%;
     margin-top: 3%;
   }
 
-  @media (max-width:1024px) {
-    
-}
-
-@media (max-width:768px) {
-
-    p {
-        font-size: 14px;
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 14px;
     }
 
-    h3 {
-        font-size: 40px;
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 12px;
     }
 
-}
-
-@media (max-width:480px) {
-    
-}
+    h1 {
+      font-size: 30px;
+    }
+  }
 `;
 
 const FAQS = () => {
@@ -53,10 +52,10 @@ const FAQS = () => {
     <div>
       <Title>
         <img src={Icon} />
-        <p>OUR FAQS</p>
-        <h3>Frequently Asked Questions</h3>
+        <h2>OUR FAQS</h2>
+        <h1>Frequently Asked Questions</h1>
       </Title>
-      <TextAccordion/>
+      <TextAccordion />
     </div>
   );
 };

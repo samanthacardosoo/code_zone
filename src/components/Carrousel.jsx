@@ -88,7 +88,15 @@ const Text = styled.div `
 }
 
 @media (max-width:480px) {
-    
+    h1 {
+        font-size: 50px;
+    }
+
+    button {
+        width: 25%;
+        height: 45px;
+        font-size: 16px;
+    }
       
 }
 `;
