@@ -1,10 +1,11 @@
 import React from 'react'
+import useForm from '../hooks/useForm';
 import Icon from '../images/IconBlack.svg'
 import styled from 'styled-components' //DELETAR
 
 const Area = styled.div `
   width: 945px;
-  height: 917px;
+  height: 925px;
   background: #FF4F01;
   font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
@@ -68,17 +69,47 @@ const Area = styled.div `
 `
 
 const Contact = () => {
+  const name = useForm('name');
+  const email = useForm('email');
+  const phone = useForm('phone');
+  const message = useForm('message');
+  //const [message, setMessage] = React.useState('');
+  //estado que controla o aparecimento de animação de carregamento
+  const [loading, setLoading] = React.useState(false);
+  const [sentStatus, setSentStatus] = React.useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // previne que a página seja recarregada, que é o compartamento padrão(default)
+    if (name.validateInput() && email.validateInput() && phone.validateInput() && message.validateInput()) {
+      // como name e email são chamadas do hook customizado useForm, eles tem acesso a função de validateInput que é retornada do hook
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        name.setValue('');
+        email.setValue('');
+        phone.setValue('');
+        message.setValue('');
+        //setMessage('');
+        setSentStatus('Form submitted');  //ATENÇÃO TRADUZIR
+        //aqui não há envio real do formulário, então tem uma simulação para que isso apareça pro usuário
+        setTimeout(() => setSentStatus(''), 5000);
+      }, 2000);
+    } else {
+      //se a validação falha o formulário não envia
+    }
+  }
     return (
         <Area>
             <img src={Icon}/>
             <p>CONTACT US</p>
             <h3>Request a Quote</h3>
-            <form>
-                <input placeholder="Your Name"/>
-                <input type="email" placeholder="Email Address"/>            {/*/VALIDAR FORM!!!!!} */}
-                <input type="tel" placeholder="Phone Number"/>
-                <input placeholder="Write Message" id="textarea"/>
-                <button>Get a Free Quote</button>
+            <form onSubmit={handleSubmit}>
+                <input name="name" required="required" placeholder="Your Name"/>
+                <input name="email" type="email" required="required" placeholder="Email Address"/>            {/*/VALIDAR FORM!!!!!} */}
+                <input name="phone" type="tel" required="required" placeholder="Phone Number"/>
+                <input name="message" required="required" placeholder="Write Message" id="textarea"/>
+                <button type="submit">Get a Free Quote</button>
             </form>
         </Area>
     )
