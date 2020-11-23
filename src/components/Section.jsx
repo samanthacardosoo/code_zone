@@ -1,86 +1,136 @@
 import React from "react";
 import background from "../images/Base3.png";
 import play from "../images/IconPlay.svg";
-import styled from "styled-components"; //DELETAR
+import styled from "styled-components";
 import Contact from "./Contact";
 import FAQS from "./FAQS";
 
 const Image = styled.div`
-  background: transparent url("${background}") 0% 0% no-repeat padding-box;
-  height: 625px;
-  width: 1920px;
+  background: transparent url("${background}");
+  width: 100%;
+  height: auto;
 
   h3 {
     color: #ffffff;
     font-family: "Barlow Condensed", sans-serif;
     font-size: 50px;
-    height: 145px;
-    width: 579px;
-    padding-top: 132px;
-    padding-left: 667px;
+    max-width: 47%;
+    padding-top: 12%;
+    margin-left: 25%;
   }
 
   img {
-    height: 82px;
-    width: 73px;
-    margin-top: 30px;
+    margin-top: 2%;
+    margin-bottom: 12%;
     cursor: pointer;
   }
+
+  @media (max-width:1024px) {
+
+}
+
+@media (max-width:768px) {
+    h3 {
+        font-size: 40px;
+        max-width: 61%;
+        margin-left: 20%;
+    }
+
+    img {
+        width: 50px;
+    }
+   
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Container = styled.div `
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 50% 50%;
 `
 
 const Map = styled.iframe`
-  width: 1920px;
+  width: 100%;
   height: 558px;
   border: 0;
-  margin-left: -105px;
-  margin-bottom: -5px;
+  margin-bottom: -1%;
+
+  @media (max-width:1024px) {
+    width: 1024px;
+}
+
+@media (max-width:768px) {
+    width: 768px;
+}
+
+@media (max-width:480px) {
+    width: 480px;
+}
 `;
 
 const Subscribe = styled.div`
 display: flex;
 flex-wrap: wrap;
-  width: 1920px;
-  height: 198px;
   background: #ff4f01;
 
   p {
-      font-family: 'Roboto Condensed', sans-serif;
       font-size: 30px;
       font-weight: bold;
       color: #FFFFFF;
-      margin: 77px 170px 5px 366px;
+      margin: 6% 10%;
   }
 
   input {
-    font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
     color: #666D81;
-    width: 456px;
-    height: 78px;
+    width: 30%;
+    max-height: 78px;
     border-radius: 5px;
     border: none;
-    margin-top: 60px;
-    padding-left: 30px;
+    margin-top: 5%;
+    padding-left: 2%;
   }
 
   button {
-    width: 229px;
-    height: 78px;
+    width: 15%;
+   max-height: 78px;
     background: #131D3B;
     border-radius: 5px;
     border: none;
-    font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
     color: #FFFFFF;
-    margin-top: 60px;
-    margin-left: 15px;
-    
+    margin-top: 5%;
+    margin-left: 1%;
   }
+
+  @media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+
+    p {
+        font-size: 20px;
+        margin: 6% 8%;
+    }
+
+    input {
+        max-height: 50px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 17%;
+        height: 50px;
+    }
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Section = () => {

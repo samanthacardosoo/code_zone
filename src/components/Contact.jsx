@@ -4,68 +4,94 @@ import Icon from '../images/IconBlack.svg'
 import styled from 'styled-components' //DELETAR
 
 const Area = styled.div `
-  width: 945px;
-  height: 925px;
+  width: 100%;
+  height: 845px;
   background: #FF4F01;
-  font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
-  margin-top: -120px;
+  margin-top: -15%;
   border-radius: 0px 5px 5px 0px;
 
   img {
-    margin-top: 120px;
-    margin-left: 367px;
+    margin-top: 10%;
+    margin-left: 25%;
   }
 
   p {
     letter-spacing: 3.2px;
     color: #FFDCCD;
     font-size: 16px;
-    margin-left: 367px;
-    margin-top: 15px;
+    margin-left: 25%;
+    margin-top: 2%;
   }
 
   h3 {
     font-size: 50px;
     color: #FFFFFF;
-    margin-left: 367px;
-    margin-top: 15px;
+    margin-left: 25%;
+    margin-top: 2%;
   }
 
   form {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    margin-left: 363px;
-    margin-top: 60px;
+    margin-left: 25%;
+    margin-top: 8%;
   }
 
   input {
-    height: 78px;
-    width: 456px;
+    height: 5%;
+    width: 70%;
     border-radius: 5px;
     border: none;
-    font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
-    padding-left: 15px;
+    padding: 5%;
   }
 
   #textarea {
-      height: 114px;
-      width: 456px;
-      padding-left: 15px;
+      height: 70%;
+      width: 70%;
+      //padding: 5%;
       
   }
 
   button {
-    width: 242px;
+    width: 35%;
     height: 78px;
     background: #131D3B;
     border-radius: 5px;
     color: #FFFFFF;
-    margin-top: 25px;
     font-size: 18px;
-    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 12%;
+    //margin-bottom: 5%;
   }
+
+@media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+
+    p {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    input {
+        height: 10px;
+    }
+
+    button {
+        width: 60%;
+        height: 55px;
+    }
+}
+
+@media (max-width:480px) {
+    
+}
 `
 
 const Contact = () => {
@@ -107,7 +133,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit}>
                 <input name="name" required="required" placeholder="Your Name"/>
                 <input name="email" type="email" required="required" placeholder="Email Address"/>            {/*/VALIDAR FORM!!!!!} */}
-                <input name="phone" type="tel" required="required" placeholder="Phone Number"/>
+                <input name="phone" type="tel" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required="required" placeholder="Phone Number"/>
                 <input name="message" required="required" placeholder="Write Message" id="textarea"/>
                 <button type="submit">Get a Free Quote</button>
             </form>

@@ -1,26 +1,65 @@
 import React from "react";
 import logo from "../images/Logo.png";
-import styled from "styled-components"; //deleltar!
-//import {} from '../styles'
+import styled from "styled-components";
+
 
 const ContainerHeader = styled.header`
-  background: #ffffff 0% 0% no-repeat padding-box;
-  width: 1920px;
+  background: #ffffff;
   height: 113px;
 
   a {
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
-    padding: 20px;
-    text-decoration: none;
-    width: 821px;
-    height: 21px;
     color: #666d81;
+    max-width: 821px;
+    height: 21px;
+    padding: 20px;
   }
 
   img {
     margin-top: 20px;
   }
+
+@media (max-width:768px) {
+    display: grid;
+    height: 435px;
+
+    a {
+    font-size: 30px;
+    color: #666d81;
+    max-width: 821px;
+    max-height: 21px;
+    padding: 20px;
+  }
+
+  img {
+    margin-top: 0;
+  }
+ 
+}
+
+/* @media (max-width:1024px) {
+
+} */
+
+@media (max-width:480px) {
+    display: grid;
+    height: 570px;
+
+    a {
+    font-size: 40px;
+    color: #666d81;
+    max-width: 50%;
+    max-height: 21px;
+    padding: 20px;
+  }
+
+  img {
+    margin-top: 0;
+    width: 50%;
+  }
+ 
+}
+
 `;
 
 const Header = () => {

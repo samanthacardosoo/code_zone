@@ -1,68 +1,122 @@
 import React from "react";
-import styled from "styled-components"; //DELETAR
+import styled from "styled-components"; 
 import bgFooter from "../images/footer.png"
 
 const Container = styled.footer`
-  width: 1920px;
-  height: 589px;
-  background: transparent url("${bgFooter}") 0% 0% no-repeat padding-box;
+  background: transparent url("${bgFooter}");
 `;
 
 const ContainerList = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 1169px;
-  height: 241px;
+  grid-template-columns: repeat(4, 1fr) 2fr;
   text-align: left;
-  margin: 0px 0px 130px 384px;
+  margin-left: 15%;
 
   h5 {
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 24px;
     color: #FFFFFF;
-    width: 56px;
-    height: 32px;
-    margin-top: 125px
+    margin-bottom: 15%;
+    margin-top: 35%;
   }
 
   li {
     list-style-type: none;
-    padding-top: 13px;
-    margin-top: 10px;
-    font-family: "Roboto Condensed", sans-serif;
+    padding-top: 2%;
+    margin-top: 5%;
     font-size: 16px;
   }
 
   a {
-    text-decoration: none;
     color: #b6bbcc;
-    width: 84px;
-    height: 181px;
   }
 
-  p {
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 16px;
-    padding-top: 13px;
-    margin-top: 10px;
-    color: #b6bbcc;
-    width: 235px;
-  }
+  @media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+    h5 {
+        font-size: 20px
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width:480px) {
+    
+}
+
 `;
+
+const DivContact = styled.div `
+
+h5 {
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 11%;
+    margin-bottom: 6%;
+    margin-left: 10%;
+    margin-top: 18%;
+
+  }
+
+p {
+    font-size: 16px;
+    padding-top: 2%;
+    margin-top: 5%;
+    color: #b6bbcc;
+    margin-left: 10%;
+  }
+
+  @media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+    h5 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width:480px) {
+    
+}
+
+`
 
 const Line = styled.div`
   border-bottom: 2px solid #b6bbcc;
   border-right: none;
-  width: 70%;
-  height: 140px;
-  margin-left: 322px;
+  width: 75%;
+  margin-left: 15%;
+  margin-top: 5%;
 `;
 
-const Copyrigth = styled.p`
-  font-family: "Roboto Condensed", sans-serif;
+const Copyright = styled.p`
   font-size: 16px;
   color: #b6bbcc;
-  margin-top: 30px;
+  margin-top: 2%;
+
+@media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+    font-size: 14px;
+
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Footer = () => {
@@ -76,9 +130,8 @@ const Footer = () => {
               <a href="#">Services</a>
             </li>
             <li>
-              <a href="#">About</a>
-            </li>{" "}
-            {/*//FOCO!!!!*/}
+              <a href="#" style={{color:"#FF4F01"}}>About</a>
+            </li>
             <li>
               <a href="#">New Projects</a>
             </li>
@@ -144,15 +197,15 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <DivContact>
           <h5>Contact</h5>
           <p>660 Broklyn Street, 88 New York, USA</p>
           <p>needhelp@dustri.com</p>
           <p>666 888 0000</p>
-        </div>
+        </DivContact>
       </ContainerList>
       <Line />
-      <Copyrigth>&copy; Copyright 2020 CODEZONE</Copyrigth>
+      <Copyright>&copy; Copyright 2020 CODEZONE</Copyright>
     </Container>
   );
 };

@@ -1,33 +1,51 @@
 import React from "react";
 import Icon from "../images/Icon.svg";
-import styled from "styled-components"; //DELETAR
+import styled from "styled-components";
 import TextAccordion from "./Accordion";
 
 
 const Title = styled.div`
-  width: 512px;
-  font-family: "Roboto Condensed", sans-serif;
   text-align: left;
 
   img {
-    margin-top: 120px;
-    margin-left: 163px;
+    margin-top: 10%;
+    margin-left: 20%;
   }
 
   p {
     letter-spacing: 3.2px;
     color: #666d81;
     font-size: 16px;
-    margin-left: 163px;
-    margin-top: 15px;
+    margin-left: 20%;
+    margin-top: 3%;
   }
 
   h3 {
     font-size: 50px;
     color: #131d3b;
-    margin-left: 163px;
-    margin-top: 15px;
+    margin-left: 20%;
+    margin-top: 3%;
   }
+
+  @media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+
+    p {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const FAQS = () => {

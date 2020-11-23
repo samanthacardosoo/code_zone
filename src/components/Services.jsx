@@ -1,15 +1,14 @@
 import React from "react";
 import icon from "../images/Icon.svg";
 import image from "../images/Image.png";
-import styled from "styled-components"; //DELETAR
+import styled from "styled-components";
 
 const Title = styled.div`
-  font-family: "Roboto Condensed", sans-serif;
 
   img {
-    width: 18px;
-    height: 19px;
-    margin-top: 100px;
+    max-width: 18px;
+    max-height: 19px;
+    margin-top: 7%;
     justify-content: center;
   }
 
@@ -18,87 +17,161 @@ const Title = styled.div`
     text-align: center;
     letter-spacing: 3.2px;
     color: #666d81;
-    margin-top: 15px;
+    margin-top: 1%;
   }
 
   h4 {
-    text-align: center;
-    color: #131d3b;
     font-size: 50px;
-    font-weight: bold;
-    margin-top: 15px;
+    font-weight: bold;  
+    color: #131d3b;
+    text-align: center;
+    margin-top: 1%;
   }
+
+  @media (max-width:1024px) {
+
+}
+
+@media (max-width:768px) {
+
+  p {
+    font-size: 14px;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Images = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 5%;
 
   img {
-    width: 780px;
-    height: 415px;
+    max-width: 50%;
+    //max-height: 415px;
   }
+
+  @media (max-width:1024px) {
+
+}
+
+@media (max-width:768px) {
+    display: grid;
+    grid-template-rows: repeat(2fr);
+    
+    img {
+     max-width: 100%
+    }
+}
+
+@media (max-width:480px) {
+    max-width: 480px;
+    max-height: auto;
+}
 `;
 
 const Area = styled.div`
-  width: 375px;
-  height: 415px;
+  max-width: 30%;
+  //max-height: 415px;
   background: #ff4f01;
   border-radius: 5px;
-  margin-left: 35px;
-  font-family: "Roboto Condensed", sans-serif;
+  margin-left: 3%;
   text-align: left;
 
   h3 {
     color: #ffffff;
     font-size: 36px;
-    padding: 50px 60px 45px 56px;
     font-weight: normal;
-    margin-bottom: 70px;
+    padding: 10% 15%;
+    margin-bottom: 10%;
   }
 
   a {
     color: #ffffff;
-    text-decoration: none;
     font-size: 14px;
-    padding-left: 60px;
+    padding-left: 15%;
   }
+
+  @media (max-width:1024px) {
+
+}
+
+@media (max-width:768px) {
+    max-width: 100%;
+    height: 280px;
+    margin-left: 0;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Articles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 300px;
   text-align: left;
-  font-family: "Roboto Condensed", sans-serif;
-  margin: 20px 366px 20px 395px;
+  margin: 1% 8%;
 
   div {
-      padding: 20px;
-      width: 376px;
+      padding: 3%;
   }
 
   h3 {
     color: #131d3b;
     font-size: 24px;
-    margin-top: 15px;
+    margin-top: 3%;
   }
 
   p {
     color: #666d81;
     font-size: 17px;
-    padding-bottom: 40px;
-    margin-top: 25px;
+    padding-bottom: 10%;
+    margin-top: 8%;
   }
 
   a {
-    text-decoration: none;
     color: #ff4f01;
     font-size: 14px;
-    margin-top: 15px;
   }
+
+  @media (max-width:1024px) {
+
+}
+
+@media (max-width:768px) {
+    display: grid;
+  grid-template-columns: revert;
+  margin: 1% 5%;
+
+  div {
+      padding: 0;
+  }
+  
+  p {
+    padding-bottom: 2%;
+    margin-top: 5%;
+  }
+    
+}
+
+@media (max-width:480px) {
+    
+}
 `;
 
 const Services = () => {

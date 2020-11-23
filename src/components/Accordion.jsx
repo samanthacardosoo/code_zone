@@ -22,7 +22,7 @@ const AccordionContainer = styled.div `
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
   height: auto;
-  max-height: 9999px;
+  width: 90%;
 }
 
 .accordion-item.collapsed {
@@ -39,8 +39,10 @@ const AccordionContainer = styled.div `
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  height: 30px;
-  padding: 20px;
+  height: 5%;
+  width: 80%;
+  padding: 3%;
+  margin-bottom: 2%;
 
   &::after {
     content: "";
@@ -71,16 +73,26 @@ const AccordionContainer = styled.div `
 `
 
 const Container = styled.div `
-    width: 600px;
-    margin: 0 auto;
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
     color: #666D81;
     text-align: left;
     line-height: 1.4;
-    margin-left: 163px;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-left: 20%;
+    margin-top: 5%;
+
+    @media (max-width:1024px) {
+    
+  }
+  
+  @media (max-width:768px) {
+   .accordion-title {
+      font-size: 16px;
+   }
+  }
+  
+  @media (max-width:480px) {
+      
+  }
 `
 
 const Accordion = ({ title, children }) => {
