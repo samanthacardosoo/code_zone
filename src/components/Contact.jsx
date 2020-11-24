@@ -111,7 +111,7 @@ const Contact = () => {
       <img src={Icon} />
       <p>CONTACT US</p>
       <h3>Request a Quote</h3>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input 
           name="name" 
           required="required" 
