@@ -57,7 +57,7 @@ const Header = () => {
       <a href="/">Pages</a>
       <a href="/">Our Services</a>
       <a href="/">
-        <img src={logo} />
+        <img src={logo} alt="" />
       </a>
       <a href="/">Recent Projects</a>
       <a href="/">Blog</a>

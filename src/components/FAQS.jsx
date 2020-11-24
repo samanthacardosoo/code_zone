@@ -51,7 +51,7 @@ const FAQS = () => {
   return (
     <div>
       <Title>
-        <img src={Icon} />
+        <img src={Icon} alt="" />
         <h2>OUR FAQS</h2>
         <h1>Frequently Asked Questions</h1>
       </Title>

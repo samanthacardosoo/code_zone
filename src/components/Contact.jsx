@@ -108,7 +108,7 @@ const Area = styled.div`
 const Contact = () => {
   return (
     <Area>
-      <img src={Icon} />
+      <img src={Icon} alt=""/>
       <p>CONTACT US</p>
       <h3>Request a Quote</h3>
       <form>

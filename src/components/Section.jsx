@@ -166,7 +166,7 @@ const Section = () => {
     <div>
       <Image>
         <h3>Dustri provides the best service for sustainable progress</h3>
-        <img src={play} />
+        <img src={play} alt="" />
       </Image>
       <Container>
         <Contact />

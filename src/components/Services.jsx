@@ -152,12 +152,12 @@ const Services = () => {
   return (
     <div>
       <Title>
-        <img src={icon} />
+        <img src={icon} alt="" />
         <h2>OUR SERVICES</h2>
         <h1>Industries Served</h1>
       </Title>
       <Images>
-        <img src={image} />
+        <img src={image} alt="" />
         <Area>
           <h1>We are a leading industry & factory company in new york</h1>
           <a href="/">READ MORE</a>
