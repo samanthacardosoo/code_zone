@@ -1,5 +1,4 @@
 import React from "react";
-import useForm from "../hooks/useForm";
 import Icon from "../images/IconBlack.svg";
 import styled from "styled-components";
 
@@ -107,37 +106,6 @@ const Area = styled.div`
 `;
 
 const Contact = () => {
-  const name = useForm("name");
-  const email = useForm("email");
-  const phone = useForm("phone");
-  const msg = useForm("msg");
-  const [message, setMessage] = React.useState('');
-  //const [loading, setLoading] = React.useState(false);
-  const [sentStatus, setSentStatus] = React.useState("");
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (
-      name.validateInput() &&
-      email.validateInput() &&
-      phone.validateInput() &&
-      msg.validateInput()
-    ) {
-      //setLoading(true);
-      setTimeout(() => {
-        //setLoading(false);
-        name.setValue("");
-        email.setValue("");
-        phone.setValue("");
-        msg.setValue("");
-        setMessage('');
-        setSentStatus("Form submitted"); //ATENÇÃO TRADUZIR
-        //aqui não há envio real do formulário, então tem uma simulação para que isso apareça pro usuário
-        setTimeout(() => setSentStatus(""), 5000);
-      }, 2000);
-    } else {
-    }
-  }
   return (
     <Area>
       <img src={Icon} />
