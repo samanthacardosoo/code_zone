@@ -110,36 +110,32 @@ const Contact = () => {
   const name = useForm("name");
   const email = useForm("email");
   const phone = useForm("phone");
-  const message = useForm("message");
-  //const [message, setMessage] = React.useState('');
-  //estado que controla o aparecimento de animação de carregamento
-  const [loading, setLoading] = React.useState(false);
+  const msg = useForm("msg");
+  const [message, setMessage] = React.useState('');
+  //const [loading, setLoading] = React.useState(false);
   const [sentStatus, setSentStatus] = React.useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    // previne que a página seja recarregada, que é o compartamento padrão(default)
     if (
       name.validateInput() &&
       email.validateInput() &&
       phone.validateInput() &&
-      message.validateInput()
+      msg.validateInput()
     ) {
-      // como name e email são chamadas do hook customizado useForm, eles tem acesso a função de validateInput que é retornada do hook
-      setLoading(true);
+      //setLoading(true);
       setTimeout(() => {
-        setLoading(false);
+        //setLoading(false);
         name.setValue("");
         email.setValue("");
         phone.setValue("");
-        message.setValue("");
-        //setMessage('');
+        msg.setValue("");
+        setMessage('');
         setSentStatus("Form submitted"); //ATENÇÃO TRADUZIR
         //aqui não há envio real do formulário, então tem uma simulação para que isso apareça pro usuário
         setTimeout(() => setSentStatus(""), 5000);
       }, 2000);
     } else {
-      //se a validação falha o formulário não envia
     }
   }
   return (
@@ -148,23 +144,25 @@ const Contact = () => {
       <p>CONTACT US</p>
       <h3>Request a Quote</h3>
       <form onSubmit={handleSubmit}>
-        <input name="name" required="required" placeholder="Your Name" />
+        <input 
+          name="name" 
+          required="required" 
+          placeholder="Your Name"
+        />
         <input
           name="email"
           type="email"
           required="required"
           placeholder="Email Address"
-        />{" "}
-        {/*/VALIDAR FORM!!!!!} */}
+        />
         <input
           name="phone"
           type="tel"
-          pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
           required="required"
           placeholder="Phone Number"
         />
         <input
-          name="message"
+          name="msg"
           required="required"
           placeholder="Write Message"
           id="textarea"

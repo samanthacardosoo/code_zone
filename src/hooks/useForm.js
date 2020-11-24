@@ -1,7 +1,5 @@
 import React from 'react';
 
-//hook customizado que faz a validação dos campos do formulário da página de contato e também o campo de input da busca de drinks
-
 const types = {
   name: {
     regex: /^[a-zA-Z ]+$/,
@@ -21,24 +19,18 @@ const types = {
   },
 };
 
-//convençao é o nome do hook começar sempre com "use"
-// o hook recebe um tipo de dado para ser validado
 const useForm = (type) => {
-  //estados para controlar erro e valores recebidos
   const [erro, setErro] = React.useState(null);
   const [value, setValue] = React.useState('');
 
   function validateInput(value) {
-    // função que valida o input recebido e recebe como parâmetro o estado value
     if (value.length === 0) {
-      setErro('Fill the input'); //ATEÇÃO TRADUZIR
+      setErro('Fill the input');
       return false;
     } else if (types[type] && !types[type].regex.test(value)) {
-      //aqui queremos dizer que há erro e retornar que a validação é falsa (ou seja, não passou) se o tipo passado existe e se o teste da regex falhar, mas como estamos usando um && e para entrar nessa condição ambas testes tem que ser verdadeiro, usamos a negação(!) para a o false do teste da regex ser true
       setErro(types[type].errorMsg);
       return false;
     } else {
-      //condição de passar na validação
       setErro(null);
       return true;
     }
@@ -55,9 +47,6 @@ const useForm = (type) => {
     setValue(target.value);
   }
   return {
-    // hook não retorna elementos HTML pois não é um componente - hook retorna a lógica de programação
-    //aqui retornamos os controles do campo, inclsuive as funçoes onde queremos que haja a validação: onBlur e também a própria validateInput
-    //por isso podemos no componente contato chamar o componente Input e passar const nome = useForm(name) -> {...nome} como spread, pois essa variavel nome já vai conter todas essas informações/propriedades que vaõ ser passas diretamente para o componente Input
     value,
     setValue,
     erro,
